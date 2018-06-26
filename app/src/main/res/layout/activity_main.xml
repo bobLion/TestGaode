@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:id="@+id/tv_download_offline_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="downLoadOfflineMap"
+                android:text="离线地图下载"/>
+
+            <TextView
+                android:id="@+id/tv_check_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_marginTop="10dp"
+                android:onClick="checkTemperature"
+                android:text="实时天气查询"/>
+
+            <TextView
+                android:id="@+id/tv_route_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_marginTop="10dp"
+                android:onClick="selectRoute"
+                android:text="路径规划"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="5dp">
+            <EditText
+                android:id="@+id/edt_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:hint="输入区域"
+                android:background="@drawable/edit_text_background"
+                android:layout_marginRight="20dp"/>
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/search"
+                android:clickable="true"
+                android:onClick="checkArea"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.amap.api.maps.MapView>
+    </FrameLayout>
+
+</LinearLayout>
